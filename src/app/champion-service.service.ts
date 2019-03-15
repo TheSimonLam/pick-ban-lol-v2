@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ChampionServiceService {
 
+  private championsDataUrl: string = "http://ddragon.leagueoflegends.com/cdn/9.5.1/data/en_US/champion.json";
+
   constructor() { }
 }

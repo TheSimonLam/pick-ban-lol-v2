@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-queue',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./queue.component.css']
 })
 export class QueueComponent implements OnInit {
+
+  @Input() type: string;
+  @Input('size') size: number;
 
   constructor() { }
 
