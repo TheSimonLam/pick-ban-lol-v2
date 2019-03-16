@@ -17,6 +17,6 @@ export class AppComponent {
 
   getChamps(): void {
     this.championService.getChampions()
-      .subscribe(champs => {this.championService.setChampions(champs); this.champsReady = true;});
+      .subscribe(res => {this.championService.setChampions(res); this.champsReady = true;});
   }
 }

@@ -31,8 +31,8 @@ export class ChampionService {
       );
   }
 
-  setChampions (champs) {
-    this.champions = champs;
+  setChampions (res) {
+    this.champions = res.data;
   }
 
   getBlueChamps(){

@@ -8,17 +8,33 @@ import { ChampionService } from '../champion-service';
 })
 export class ChampComponent implements OnInit {
 
-  hovered: boolean = false;
+  opened: boolean = false;
   @Input() props;
   champions = {};
+  selectedChamp = {};
+  showX = false;
 
   constructor(private championService: ChampionService) { }
 
   ngOnInit() {
-    console.log(this.championService.champions);
+    this.champions = Object.values(this.championService.champions);
+    console.log(this.champions);
   }
 
-  onClick():void {
+  toggleX(){
+    this.showX = !this.showX;
+  }
+
+  iconClicked(){
+    if(!this.selectedChamp.image){
+      this.opened = true;
+    }
+  }
+
+  champSelected(selectedChamp){
+    this.selectedChamp = selectedChamp;
+    this.opened = false;
+
     if(this.props.side){
       //TODO: If this.props.lockedIn, then fire to service along with this.props.side to track champion stats
       console.log(this.props);
@@ -28,7 +44,8 @@ export class ChampComponent implements OnInit {
     }
   }
 
-  toggleHover(){
-    this.hovered = !this.hovered;
+  swapChamp(){
+    this.selectedChamp = false;
+    this.showX = false;
   }
 }
