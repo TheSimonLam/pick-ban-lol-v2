@@ -1,2 +1,15 @@
-<app-team [side]="0"></app-team>
-<app-team [side]="1"></app-team>
+<div *ngIf="champsReady">
+  <app-team [side]="'blue'"></app-team>
+  <app-team [side]="'red'"></app-team>
+
+  <span>PRIORITY PICKS</span>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
+
+  <span>PRIORITY BANS</span>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
+
+  <span>EXPECTED BANS</span>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
+</div>
+
+<div *ngIf="!champsReady">L O A D I N G . . .</div>

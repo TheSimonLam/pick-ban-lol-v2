@@ -1,0 +1,15 @@
+.champ-container{
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0 1%;
+}
+
+.champ-select-container{
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  background: white;
+  position: absolute;
+}

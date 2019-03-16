@@ -1,3 +1,7 @@
-<p>
-  champ works!
-</p>
+<div class="champ-container" (click)="onClick()" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+  <div *ngIf="hovered" class="champ-select-container">
+    <div *ngFor="let champ of champions">
+      <!--{{champ}}-->
+    </div>
+  </div>
+</div>

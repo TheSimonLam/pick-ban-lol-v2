@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-queue',
@@ -7,12 +7,18 @@ import {Component, Input, OnInit, Input} from '@angular/core';
 })
 export class QueueComponent implements OnInit {
 
-  @Input() type: string;
-  @Input('size') size: number;
+  @Input() props;
+  boxes;
 
   constructor() { }
 
   ngOnInit() {
+    if(this.props.lockedIn){
+      this.boxes = [{position: 'top', side: this.props.side}, {position: 'jungle', side: this.props.side}, {position: 'mid', side: this.props.side}, {position: 'adc', side: this.props.side}, {position: 'support', side: this.props.side}];
+    }
+    else{
+      this.boxes = Array(this.props.size).fill(0).map((x,i)=>i);
+    }
   }
 
 }

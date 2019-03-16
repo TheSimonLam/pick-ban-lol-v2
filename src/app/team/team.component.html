@@ -1,10 +1,16 @@
-<span>{{side}}</span>
-<app-queue [size]="6" [type]="'top'"></app-queue>
-<app-queue [size]="6" [type]="'jungle'"></app-queue>
-<app-queue [size]="6" [type]="'mid'"></app-queue>
-<app-queue [size]="6" [type]="'adc'"></app-queue>
-<app-queue [size]="6" [type]="'support'"></app-queue>
+<div class="team-container">
+  <div *ngIf="side==='blue'" style="font-weight: bold; color: blue">BLUE</div>
+  <div *ngIf="side==='red'" style="font-weight: bold; color: red">RED</div>
 
-<app-queue [size]="5" [type]="'bans'"></app-queue>
+  <span>PRIORITY QUEUE</span>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
+  <app-queue [props]="{size: 5, side: side}"></app-queue>
 
-<app-stats></app-stats>
+  <span>LOCKED IN</span>
+  <app-queue [props]="{size: 5, side: side, lockedIn: true}"></app-queue>
+
+  <app-stats></app-stats>
+</div>
