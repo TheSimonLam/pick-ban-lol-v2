@@ -6,6 +6,7 @@
   margin: 0 1%;
   position: relative;
   background: white;
+  border-radius: 5px;
 }
 
 .champ-select-container{
