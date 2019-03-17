@@ -1,15 +1,24 @@
-<div *ngIf="champsReady">
+<nav class="nav-container">
+  <div class="nav-heading">⚡ Pick Ban Planner</div>
+  <div class="nav-sig">Created by <a href="https://twitter.com/Ninjaroni_">Ninjaroni.</a>🚀</div>
+</nav>
+
+<div class="other-queues" *ngIf="champsReady">
   <app-team [side]="'blue'"></app-team>
   <app-team [side]="'red'"></app-team>
 
-  <span>PRIORITY PICKS</span>
+  <span class="title">PRIORITY PICKS</span>
   <app-queue [props]="{size: 5, side: side}"></app-queue>
 
-  <span>PRIORITY BANS</span>
+  <span class="title">PRIORITY BANS</span>
   <app-queue [props]="{size: 5, side: side}"></app-queue>
 
-  <span>EXPECTED BANS</span>
+  <span class="title">EXPECTED BANS</span>
   <app-queue [props]="{size: 5, side: side}"></app-queue>
 </div>
 
 <div *ngIf="!champsReady">L O A D I N G . . .</div>
+
+<footer class="footer-container">
+  My eyes are up there 👀
+</footer>

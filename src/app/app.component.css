@@ -1,0 +1,29 @@
+.nav-container{
+  background: yellow;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.nav-heading{
+  display: inline-block;
+}
+
+.nav-sig{
+  display: inline-block;
+  float:right;
+}
+
+.footer-container{
+  font-weight: bold;
+  background: yellow;
+  padding: 10px;
+}
+
+.title{
+  font-weight: bold;
+}
+
+.other-queues{
+  background: lightyellow;
+}

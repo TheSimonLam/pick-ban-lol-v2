@@ -18,15 +18,15 @@ export class ChampComponent implements OnInit {
 
   ngOnInit() {
     this.champions = Object.values(this.championService.champions);
-    console.log(this.champions);
+    // console.log(this.champions);
   }
 
   toggleX(){
     this.showX = !this.showX;
   }
 
-  iconClicked(){
-    if(!this.selectedChamp.image){
+  openChampbox(){
+    if(!this.selectedChamp['image']){
       this.opened = true;
     }
   }
@@ -36,11 +36,12 @@ export class ChampComponent implements OnInit {
     this.opened = false;
 
     if(this.props.side){
-      //TODO: If this.props.lockedIn, then fire to service along with this.props.side to track champion stats
-      console.log(this.props);
-    }
-    else{
-      console.log(this.props);
+      if(this.props.side === 'blue'){
+        this.championService.blueChamps[this.props.position] = selectedChamp;
+      }
+      else{
+        this.championService.redChamps[this.props.position] = selectedChamp;
+      }
     }
   }
 

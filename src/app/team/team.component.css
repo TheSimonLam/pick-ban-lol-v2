@@ -2,3 +2,11 @@
   width: 50%;
   display: inline-block;
 }
+
+.team-wrapper{
+  padding: 10px;
+}
+
+.title{
+  font-weight: bold;
+}

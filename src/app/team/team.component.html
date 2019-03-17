@@ -1,16 +1,18 @@
-<div class="team-container">
-  <div *ngIf="side==='blue'" style="font-weight: bold; color: blue">BLUE</div>
-  <div *ngIf="side==='red'" style="font-weight: bold; color: red">RED</div>
+<div class="team-container" [ngStyle]="{'background-color':side === 'blue' ? 'lightblue' : 'lightcoral' }">
+  <div class="team-wrapper">
+    <span class="title">PRIORITY QUEUE</span>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
 
-  <span>PRIORITY QUEUE</span>
-  <app-queue [props]="{size: 5, side: side}"></app-queue>
-  <app-queue [props]="{size: 5, side: side}"></app-queue>
-  <app-queue [props]="{size: 5, side: side}"></app-queue>
-  <app-queue [props]="{size: 5, side: side}"></app-queue>
-  <app-queue [props]="{size: 5, side: side}"></app-queue>
+    <span class="title">BANS</span>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
 
-  <span>LOCKED IN</span>
-  <app-queue [props]="{size: 5, side: side, lockedIn: true}"></app-queue>
+    <span class="title">LOCKED IN</span>
+    <app-queue [props]="{size: 5, side: side, lockedIn: true}"></app-queue>
 
-  <app-stats></app-stats>
+    <app-stats [side]="side"></app-stats>
+  </div>
 </div>

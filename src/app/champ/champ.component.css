@@ -5,13 +5,14 @@
   display: inline-block;
   margin: 0 1%;
   position: relative;
+  background: white;
 }
 
 .champ-select-container{
   height: 300px;
   width: 290px;
   border: 1px solid black;
-  background: white;
+  background: black;
   position: absolute;
   overflow-y: scroll;
   text-align: left;
