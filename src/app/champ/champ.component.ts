@@ -8,7 +8,7 @@ import { ChampionService } from '../champion-service';
 })
 export class ChampComponent implements OnInit {
 
-  opened: boolean = false;
+  opened = false;
   @Input() props;
   champions = {};
   selectedChamp = {};
@@ -35,7 +35,7 @@ export class ChampComponent implements OnInit {
   }
 
   champSelected(selectedChamp){
-    this.selectedChamp = selectedChamp;
+    this.selectedChamp = selectedChamp || {};
     this.opened = false;
 
     if(this.props.side){
