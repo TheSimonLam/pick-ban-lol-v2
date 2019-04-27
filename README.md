@@ -1,5 +1,7 @@
 # PickBanLolV2
 
+Don't forget to update League patch numbers to get latest info/images from DataDragon!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
 ## Development server

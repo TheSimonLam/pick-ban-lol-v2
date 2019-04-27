@@ -1,6 +1,6 @@
 .champ-container{
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   display: inline-block;
   margin: 0 1%;
@@ -11,7 +11,7 @@
 
 .champ-select-container{
   height: 300px;
-  width: 290px;
+  width: 360px;
   border: 1px solid black;
   background: black;
   position: absolute;
@@ -28,20 +28,43 @@
   top: 0;
   left: 0;
   position: absolute;
+  font-size: 0.7em;
 }
 
 .big-x{
   color: red;
   font-size: 2em;
   position: absolute;
-  margin: 10% 30%;
+  margin: 0 25%;
 }
 
 .swap-button{
   position: absolute;
   z-index: 2;
-  font-size: 0.7em;
+  font-size: 0.8em;
   bottom: 0;
-  background: yellow;
+  background: white;
   border-top-right-radius: 7px;
+  color: green;
+}
+
+.search-input{
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px 0;
+  border: 0;
+  font-weight: bold;
+}
+
+.overlay{
+  z-index: 1;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.champ-box-container{
+  z-index: 2;
 }

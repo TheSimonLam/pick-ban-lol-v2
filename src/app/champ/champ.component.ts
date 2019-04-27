@@ -18,7 +18,6 @@ export class ChampComponent implements OnInit {
 
   ngOnInit() {
     this.champions = Object.values(this.championService.champions);
-    // console.log(this.champions);
   }
 
   toggleX(){
@@ -29,6 +28,10 @@ export class ChampComponent implements OnInit {
     if(!this.selectedChamp['image']){
       this.opened = true;
     }
+  }
+
+  closeChampbox(){
+    this.opened = false;
   }
 
   champSelected(selectedChamp){

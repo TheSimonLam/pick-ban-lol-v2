@@ -1,11 +1,19 @@
 <div class="champ-container" (click)="openChampbox()">
-  <img *ngIf="selectedChamp['image']" (click)="toggleX()" class="champ-icon" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{selectedChamp.image.full}}" alt="{{selectedChamp.id}}"/>
+  <div *ngIf="opened" class="overlay" (click)="closeChampbox()"></div>
+  <img *ngIf="selectedChamp['image']" (click)="toggleX()" class="champ-icon" src="http://ddragon.leagueoflegends.com/cdn/9.8.1/img/champion/{{selectedChamp.image.full}}" alt="{{selectedChamp.id}}" />
   <div *ngIf="showX" (click)="toggleX()" class="big-x">X</div>
-  <div *ngIf="selectedChamp['image']" class="swap-button" (click)="swapChamp()">Swap</div>
+  <div *ngIf="selectedChamp['image']" class="swap-button" (click)="swapChamp()">♻</div>
 
-  <div *ngIf="opened && champions !== {}" class="champ-select-container" [ngStyle]="{'display':opened ? 'block' : 'none' }">
-    <div *ngFor="let champ of champions" class="champ-container">
-      <img (click)="champSelected(champ)" class="champ-icon" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{{champ.image.full}}" alt="{{champ.id}}"/>
+  <div *ngIf="opened" class="champ-select-container" [ngStyle]="{'display':opened ? 'block' : 'none' }">
+    <div class="champ-box-container">
+      <input class="search-input"/>
+      <div class="champ-container">
+        <img (click)="champSelected()" class="champ-icon" src="../assets/remove.png" alt="Remove"/>
+      </div>
+
+      <div *ngFor="let champ of champions" class="champ-container">
+        <img (click)="champSelected(champ)" class="champ-icon" src="http://ddragon.leagueoflegends.com/cdn/9.8.1/img/champion/{{champ.image.full}}" alt="{{champ.id}}"/>
+      </div>
     </div>
   </div>
 </div>

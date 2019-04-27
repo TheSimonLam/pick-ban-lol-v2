@@ -11,7 +11,7 @@ const httpOptions = {
 @Injectable({providedIn: 'root'})
 export class ChampionService {
 
-  private championsDataUrl: string = "http://ddragon.leagueoflegends.com/cdn/9.5.1/data/en_US/champion.json";
+  private championsDataUrl: string = "http://ddragon.leagueoflegends.com/cdn/9.8.1/data/en_US/champion.json";
   champions;
   redChamps = {
     top: {}, jungle: {}, mid: {}, adc: {}, support: {},
@@ -59,6 +59,6 @@ export class ChampionService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    console.log(`ChampionService: ${message}`);
+    // console.log(`ChampionService: ${message}`);
   }
 }

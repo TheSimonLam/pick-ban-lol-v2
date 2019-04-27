@@ -1,16 +1,24 @@
 <div class="team-container" [ngStyle]="{'background-color':side === 'blue' ? 'lightblue' : 'lightcoral' }">
   <div class="team-wrapper">
-    <span class="title">PRIORITY QUEUE</span>
+    <span class="title">1st Ban Phase</span>
     <app-queue [props]="{size: 5, side: side}"></app-queue>
-    <app-queue [props]="{size: 5, side: side}"></app-queue>
+
+    <span class="title">1st Pick Phase</span>
     <app-queue [props]="{size: 5, side: side}"></app-queue>
     <app-queue [props]="{size: 5, side: side}"></app-queue>
     <app-queue [props]="{size: 5, side: side}"></app-queue>
 
-    <span class="title">BANS</span>
+    <span class="title">2nd Ban Phase</span>
     <app-queue [props]="{size: 5, side: side}"></app-queue>
 
-    <span class="title">LOCKED IN</span>
+    <span class="title">2nd Pick Phase</span>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
+
+    <span class="title">Actual Bans</span>
+    <app-queue [props]="{size: 5, side: side}"></app-queue>
+
+    <span class="title">Locked In</span>
     <app-queue [props]="{size: 5, side: side, lockedIn: true}"></app-queue>
 
     <app-stats [side]="side"></app-stats>
