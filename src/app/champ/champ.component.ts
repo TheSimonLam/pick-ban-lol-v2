@@ -68,4 +68,13 @@ export class ChampComponent implements OnInit {
       boxElement['style'].right = "0px";
     }
   }
+
+  filterItem(filterString){
+    if(!filterString){
+      this.champions = Object.values(this.championService.champions);
+    }
+    this.champions = Object.assign([], this.champions).filter(
+      champ => champ.name.toLowerCase().indexOf(filterString.toLowerCase()) > -1
+    )
+  }
 }

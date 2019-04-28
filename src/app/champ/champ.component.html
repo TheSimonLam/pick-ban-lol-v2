@@ -7,7 +7,7 @@
 
   <div *ngIf="opened" class="champ-select-container" [ngStyle]="{'display':opened ? 'block' : 'none' }">
     <div class="champ-box-container">
-      <input #search type="text" placeholder="Enter Champion name..." class="search-input"/>
+      <input #search type="text" placeholder="Enter Champion name..." class="search-input" (input)="filterItem(search.value)"/>
       <div class="champ-container">
         <img (click)="closeChampbox()" class="champ-icon" src="../assets/remove.png" alt="Remove"/>
       </div>
