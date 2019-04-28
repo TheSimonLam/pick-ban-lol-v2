@@ -51,6 +51,7 @@ export class ChampComponent implements OnInit {
         this.championService.redChamps[this.props.position] = selectedChamp;
       }
     }
+    this.champions = Object.values(this.championService.champions);
   }
 
   swapChamp(){
