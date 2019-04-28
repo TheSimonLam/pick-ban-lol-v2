@@ -31,7 +31,10 @@ export class ChampComponent implements OnInit {
   }
 
   closeChampbox(){
-    this.opened = false;
+    //Need this for some reason.. binding wont update without it
+    setTimeout(() => {
+      this.opened = false;
+    }, 0)
   }
 
   champSelected(selectedChamp){
