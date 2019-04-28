@@ -1,12 +1,13 @@
-<div class="champ-container" (click)="openChampbox()">
-  <div *ngIf="opened" class="overlay" (click)="closeChampbox()"></div>
+<div *ngIf="opened" class="overlay" (click)="closeChampbox()"></div>
+<div class="champ-container">
+  <div class="champ-container-wrapper" (click)="openChampbox()"></div>
   <img *ngIf="selectedChamp !== {} && selectedChamp['image']" (click)="toggleX()" class="champ-icon" src="http://ddragon.leagueoflegends.com/cdn/9.8.1/img/champion/{{selectedChamp.image.full}}" alt="{{selectedChamp.id}}" />
   <div *ngIf="showX" (click)="toggleX()" class="big-x">X</div>
   <div *ngIf="selectedChamp !== {} && selectedChamp['image']" class="swap-button" (click)="swapChamp()">♻</div>
 
   <div *ngIf="opened" class="champ-select-container" [ngStyle]="{'display':opened ? 'block' : 'none' }">
     <div class="champ-box-container">
-      <input class="search-input"/>
+      <input #search type="text" placeholder="Enter Champion name..." class="search-input"/>
       <div class="champ-container">
         <img (click)="closeChampbox()" class="champ-icon" src="../assets/remove.png" alt="Remove"/>
       </div>

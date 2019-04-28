@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
 import { ChampionService } from '../champion-service';
 
 @Component({
@@ -13,6 +13,7 @@ export class ChampComponent implements OnInit {
   champions = {};
   selectedChamp = {};
   showX = false;
+  @ViewChild("search") searchInput: ElementRef;
 
   constructor(private championService: ChampionService) { }
 
@@ -27,14 +28,15 @@ export class ChampComponent implements OnInit {
   openChampbox(){
     if(!this.selectedChamp['image']){
       this.opened = true;
+      setTimeout(() => {
+        this.searchInput.nativeElement.focus();
+        this.repositionBox();
+      }, 0);
     }
   }
 
   closeChampbox(){
-    //Need this for some reason.. binding wont update without it
-    setTimeout(() => {
-      this.opened = false;
-    }, 0)
+    this.opened = false;
   }
 
   champSelected(selectedChamp){
@@ -54,5 +56,16 @@ export class ChampComponent implements OnInit {
   swapChamp(){
     this.selectedChamp = false;
     this.showX = false;
+  }
+
+  repositionBox(){
+    let documentWidth = document.body.offsetWidth,
+      boxElement = document.getElementsByClassName("champ-select-container")[0],
+      boxElementBoundingClientRect = boxElement.getBoundingClientRect(),
+      boxElementRightPos = boxElementBoundingClientRect.right;
+
+    if(boxElementRightPos > documentWidth){
+      boxElement['style'].right = "0px";
+    }
   }
 }
